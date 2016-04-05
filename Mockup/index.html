@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name=description content="Knitting Yarn Estimator jQuery Mobile">
+    <meta name="author" content="Deborah Engelmeyer">
+    <title>Knitting Yarn Estimator</title>
+    <!-- ADD the three CDN snippets from jquerymobile.com Downloads -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script  type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script>
+		$(document).bind('mobileinit',function(){
+			$.mobile.changePage.defaults.changeHash = false;
+			$.mobile.hashListeningEnabled = false;
+			$.mobile.pushStateEnabled = false;
+		});
+	</script>
+	<script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        img.fullscreen{width:100%;}
+        img.thumbnail{width:15%;}
+		ul.ui-grid-b figure {
+			margin-left: 10px;
+			max-width: 100px;
+		}
+		img {
+			max-width: 100%;
+		}
+		.ui-field-contain * {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.ui-mobile label {
+			display: inline-block;
+			width: 7em;
+		}
+		.ui-field-contain input[type="number"] {
+			width: 3em;
+		}
+    </style>
+</head>
+<body>
+    
+<!-- home page -->
+<div data-role="page" id="home">   
+<header data-role="header">
+    <h1>Yarn Requirements</h1>
+</header>
+<article data-role="content">
+	<h2>Choose a Project Type</h2>
+    <ul class="ui-grid-b">
+        <li class="ui-block-a">
+            <a href="#mittens">
+            <figure>
+            <img src="sweater-128.jpeg" alt="Mittens" />
+			<figcaption>Mittens</figcaption>
+            </figure>
+            </a>
+        </li>
+        <li class="ui-block-b">
+            <a href="#gloves">
+            <figure>
+            <img src="sweater-128.jpeg" alt="Gloves" />
+			<figcaption>Gloves</figcaption>
+            </figure>
+			</a>
+        </li>
+        <li class="ui-block-c">
+            <a href="#socks">
+             <figure>
+            <img src="sweater-128.jpeg" alt="Socks" />
+			<figcaption>Socks</figcaption>
+            </figure>
+            </a>
+        </li>
+        <li class="ui-block-a">
+            <a href="#tams">
+            <figure>
+            <img src="sweater-128.jpeg" alt="Tam" />
+			<figcaption>Tams</figcaption>
+            </figure>
+            </a>
+        </li>
+        <li class="ui-block-b">
+            <a href="#scarves">
+            <figure>
+            <img src="sweater-128.jpeg" alt="Scarf" />
+			<figcaption>Scarves</figcaption>
+            </figure>
+            </a>
+        </li>
+        <li class="ui-block-c">
+            <a href="#toques">
+            <figure>
+            <img src="sweater-128.jpeg" alt="Toque" />
+			<figcaption>Toques</figcaption>
+            </figure>
+            </a>
+        </li>
+        <li class="ui-block-a">
+            <a href="#sweaters">
+            <figure>
+            <img src="sweater-128.jpeg" alt="Sweater" />
+			<figcaption>Sweaters</figcaption>
+            </figure>
+            </a>
+        <li class="ui-block-b">
+            <a href="#vests">
+            <figure>
+            <img src="sweater-128.jpeg" alt="Vest" />
+			<figcaption>Vests</figcaption>
+            </figure>
+            </a>
+		</li>
+        <li class="ui-block-c">
+            <a href="#shrugs">
+            <figure>
+            <img src="sweater-128.jpeg" alt="Shrug" />
+			<figcaption>Shrugs</figcaption>
+            </figure>
+            </a>
+		</li>
+    </ul>
+</article>
+
+<footer data-role="footer" data-position="fixed">
+    <nav data-role="navbar">
+        <ul>
+		<li><a href="#home" data-icon="home">Home</a></li>
+		<li><a href="#weights" data-icon="grid">Weights</a></li>
+		<li><a href="#info" data-icon="info">Info</a></li>
+        </ul>
+    </nav>
+</footer>
+</div> <!-- home page -->
+        
+<!-- Sweaters page -->
+<div data-role="page" id="sweaters">
+<header data-role="header">
+    <h1>Sweater</h1>
+</header>
+
+<article data-role="content">
+    <img src="sweater-360.jpeg" alt="Sweater" />
+	<div class="ui-field-contain">
+	  <label for="gauge">Gauge:</label>
+	  <input type="number" name="gauge" id="gauge" value="">
+	  <select name="select-gauge-units" id="select-gauge-units">
+		<option value="standard">Sts/inch</option>
+		<option value="rush">Sts/4inches</option>
+		<option value="express">Sts/10cm</option>
+	  </select>
+	</div>
+	<div class="ui-field-contain">
+	  <label for="size">Chest Size:</label>
+	  <input type="number" name="size" id="size" value="">
+	  <select name="select-size-units" id="select-size-units">
+		<option value="standard">inches</option>
+		<option value="rush">cm</option>
+	  </select>
+	</div>
+	<div class="ui-field-contain">
+	  <label for="length">Yarn Needed:</label>
+	  <input type="number" name="needed" id="needed" value="">
+	  <select name="select-length-units" id="select-length-units">
+		<option value="standard">yards</option>
+		<option value="rush">meters</option>
+	  </select>
+	</div>
+	<div class="ui-field-contain">
+	  <label for="ball-size">Ball Size:</label>
+	  <input type="number" name="ball-size" id="ball-size" value="">
+	  <select name="select-size-units" id="select-size-units">
+		<option value="standard">yards</option>
+		<option value="rush">meters</option>
+	  </select>
+	</div>
+	<div class="ui-field-contain">
+	  <label for="balls-needed">Balls Needed:</label>
+	  <input type="number" name="balls-needed" id="balls-needed" value="">
+	</div>
+</article>
+
+<footer data-role="footer" data-position="fixed">
+    <nav data-role="navbar">
+        <ul>
+		<li><a href="#home" data-icon="home">Home</a></li>
+		<li><a href="#weights" data-icon="grid">Weights</a></li>
+		<li><a href="#info" data-icon="info">Info</a></li>
+        </ul>
+    </nav>
+</footer>
+
+</div> <!-- Sweaters page -->
+
+<!-- info page -->
+<div data-role="page" id="info">
+<header data-role="header">
+    <h1>Yarn Estimator</h1>
+</header>
+
+<article data-role="content">
+	<h2>Application Info</h2>
+    <p>All images copyright &copy; Deborah Engelmeyer 2016</p>
+</article>
+
+<footer data-role="footer" data-position="fixed">
+    <nav data-role="navbar">
+        <ul>
+		<li><a href="#home" data-icon="home">Home</a></li>
+		<li><a href="#weights" data-icon="grid">Weights</a></li>
+		<li><a href="#info" data-icon="info">Info</a></li>
+        </ul>
+    </nav>
+</footer>
+
+</div>
+        
+<!-- Weights page -->
+<div data-role="page" id="weights">
+<header data-role="header">
+    <h1>Standard Yarn Weights</h1>
+	<a href="#home" data-icon="home">Home</a>
+</header>
+<article data-role="content">
+    <ul data-role="listview" data-filter="true">
+        <li>
+            <h1>Fingering</h1>
+            <ul>
+				<li>Needle sizes: 0-2 US, 2-3mm</li>
+            	<li>Gauge: 24-32 stitches/4"</li>
+				<li>14 wpi (windings/inch)</li>
+            </ul>
+        </li>
+        <li>
+            <h1>Sport</h1>
+            <ul>
+				<li>Needle sizes: 3-6 US, 3-4mm</li>
+            	<li>Gauge: 24-26 stitches/4"</li>
+				<li>12 windings/inch</li>
+            </ul>
+        </li>
+        <li>
+            <h1>DK</h1>
+            <ul>
+				<li>Needle sizes: 3-6 US, 3-4mm</li>
+            	<li>Gauge: 22 stitches/4"</li>
+				<li>11 windings/inch</li>
+            </ul>
+        </li>
+        <li>
+            <h1>Worsted</h1>
+            <ul>
+				<li>Needle sizes: 7-8 US, 4.5-5mm</li>
+            	<li>Gauge: 20 stitches/4"</li>
+				<li>9 windings/inch</li>
+            </ul>
+        </li>
+        <li>
+            <h1>Aran</h1>
+            <ul>
+				<li>Needle sizes: 8-10 US, 5-6mm</li>
+            	<li>Gauge: 18 stitches/4"</li>
+				<li>8 windings/inch</li>
+            </ul>
+        </li>
+        <li>
+            <h1>Bulky</h1>
+            <ul>
+				<li>Needle sizes: 10-13 US, 6-9mm</li>
+            	<li>Gauge: 14-15 stitches/4"</li>
+				<li>7 windings/inch</li>
+            </ul>
+        </li>
+        <li>
+            <h1>Super Bulky</h1>
+            <ul>
+				<li>Needle sizes: 13+ US, 9+mm</li>
+            	<li>Gauge: 8-12 stitches/4"</li>
+				<li>5-6 windings/inch</li>
+            </ul>
+        </li>
+	</ul>
+</article>
+<footer data-role="footer" data-position="fixed">
+    <nav data-role="navbar">
+        <ul>
+		<li><a href="#home" data-icon="home">Home</a></li>
+		<li><a href="#weights" data-icon="grid">Weights</a></li>
+		<li><a href="#info" data-icon="info">Info</a></li>
+        </ul>
+    </nav>
+</footer>
+</div> <!-- Weights page -->
+    
+</body>
+</html>

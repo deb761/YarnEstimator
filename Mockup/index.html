@@ -7,7 +7,7 @@
     <title>Knitting Yarn Estimator</title>
     <!-- ADD the three CDN snippets from jquerymobile.com Downloads -->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-	<script  type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script>
 		$(document).bind('mobileinit',function(){
 			$.mobile.changePage.defaults.changeHash = false;
@@ -37,6 +37,10 @@
 		}
 		.ui-field-contain input[type="number"] {
 			width: 3em;
+		}
+		/* Give the Titles a bit more room */
+		h1.ui-title {
+			margin: 0 15%;
 		}
     </style>
 </head>
@@ -142,6 +146,7 @@
 </header>
 
 <article data-role="content">
+	<h2>Sweater</h2>
     <img src="sweater-360.jpeg" alt="Sweater" />
 	<div class="ui-field-contain">
 	  <label for="gauge">Gauge:</label>
@@ -156,24 +161,24 @@
 	  <label for="size">Chest Size:</label>
 	  <input type="number" name="size" id="size" value="">
 	  <select name="select-size-units" id="select-size-units">
-		<option value="standard">inches</option>
-		<option value="rush">cm</option>
+		<option value="inches">inches</option>
+		<option value="cm">cm</option>
 	  </select>
 	</div>
 	<div class="ui-field-contain">
-	  <label for="length">Yarn Needed:</label>
+	  <label for="needed">Yarn Needed:</label>
 	  <input type="number" name="needed" id="needed" value="">
 	  <select name="select-length-units" id="select-length-units">
-		<option value="standard">yards</option>
-		<option value="rush">meters</option>
+		<option value="yards">yards</option>
+		<option value="meters">meters</option>
 	  </select>
 	</div>
 	<div class="ui-field-contain">
 	  <label for="ball-size">Ball Size:</label>
-	  <input type="number" name="ball-size" id="ball-size" value="">
-	  <select name="select-size-units" id="select-size-units">
-		<option value="standard">yards</option>
-		<option value="rush">meters</option>
+	  <input type="number" name="ball-size" id="ball-size" value="100">
+	  <select name="select-size-ball-units" id="select-size-ball-units">
+		<option value="yards">yards</option>
+		<option value="meters">meters</option>
 	  </select>
 	</div>
 	<div class="ui-field-contain">
@@ -220,13 +225,12 @@
 <!-- Weights page -->
 <div data-role="page" id="weights">
 <header data-role="header">
-    <h1>Standard Yarn Weights</h1>
-	<a href="#home" data-icon="home">Home</a>
+    <h1 class="ui-title" role="heading">Standard Yarn Weights</h1>
 </header>
 <article data-role="content">
     <ul data-role="listview" data-filter="true">
         <li>
-            <h1>Fingering</h1>
+            <h2>Fingering</h2>
             <ul>
 				<li>Needle sizes: 0-2 US, 2-3mm</li>
             	<li>Gauge: 24-32 stitches/4"</li>
@@ -234,7 +238,7 @@
             </ul>
         </li>
         <li>
-            <h1>Sport</h1>
+            <h2>Sport</h2>
             <ul>
 				<li>Needle sizes: 3-6 US, 3-4mm</li>
             	<li>Gauge: 24-26 stitches/4"</li>
@@ -242,7 +246,7 @@
             </ul>
         </li>
         <li>
-            <h1>DK</h1>
+            <h2>DK</h2>
             <ul>
 				<li>Needle sizes: 3-6 US, 3-4mm</li>
             	<li>Gauge: 22 stitches/4"</li>
@@ -250,7 +254,7 @@
             </ul>
         </li>
         <li>
-            <h1>Worsted</h1>
+            <h2>Worsted</h2>
             <ul>
 				<li>Needle sizes: 7-8 US, 4.5-5mm</li>
             	<li>Gauge: 20 stitches/4"</li>
@@ -258,7 +262,7 @@
             </ul>
         </li>
         <li>
-            <h1>Aran</h1>
+            <h2>Aran</h2>
             <ul>
 				<li>Needle sizes: 8-10 US, 5-6mm</li>
             	<li>Gauge: 18 stitches/4"</li>
@@ -266,7 +270,7 @@
             </ul>
         </li>
         <li>
-            <h1>Bulky</h1>
+            <h2>Bulky</h2>
             <ul>
 				<li>Needle sizes: 10-13 US, 6-9mm</li>
             	<li>Gauge: 14-15 stitches/4"</li>
@@ -274,7 +278,7 @@
             </ul>
         </li>
         <li>
-            <h1>Super Bulky</h1>
+            <h2>Super Bulky</h2>
             <ul>
 				<li>Needle sizes: 13+ US, 9+mm</li>
             	<li>Gauge: 8-12 stitches/4"</li>

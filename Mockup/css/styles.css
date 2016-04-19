@@ -1,0 +1,56 @@
+img.fullscreen{width:100%;}
+img.thumbnail{width:15%;}
+ul.ui-grid-b figure {
+    margin-left: 10px;
+    max-width: 100px;
+}
+img {
+    max-width: 100%;
+}
+.ui-field-contain * {
+    display: inline-block;
+    vertical-align: middle;
+}
+.ui-mobile label {
+    display: inline-block;
+    width: 7em;
+}
+.ui-field-contain input[type="number"] {
+    width: 3em;
+}
+/* Give the Titles a bit more room */
+h1.ui-title {
+    margin: 0 10% !important;
+    color: #703030;
+    font-size: 28px !important;
+}
+header {
+    background-color: #7E827A !important;
+}
+
+body {
+    background-color: rgba(212,216,214,0.5);
+}
+
+h2 {
+    color: #020459;
+    margin: 0.5em 0;
+}
+
+figure {
+    margin-right: 10px;
+}
+figure .frame {
+    border-radius: 8px;
+    width: 87px;
+    height: 94px;
+    background-color: #7E827A;
+    overflow: hidden;
+}
+
+figcaption {
+    color: #020459 !important;
+    text-decoration: none;
+    text-align: center !important;
+    display: block;
+}

@@ -16,7 +16,10 @@ img {
     width: 7em;
 }
 .ui-field-contain input[type="number"] {
-    width: 3em;
+    width: 3.5em;
+}
+#needed {
+    width: 6em;
 }
 /* Give the Titles a bit more room */
 h1.ui-title {
@@ -53,4 +56,17 @@ figcaption {
     text-decoration: none;
     text-align: center !important;
     display: block;
+}
+
+/* Project Styles */
+.project h2 {
+    display: inline-block;
+    max-width: 100px;
+}
+.project figure {
+    width: 178px;
+    height: 192px;
+    border-radius: 8px;
+    overflow: hidden;
+    float: right;
 }

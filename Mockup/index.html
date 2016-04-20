@@ -16,6 +16,7 @@
 		});
 	</script>
 	<script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	<script type="text/javascript" src="scripts/estimate.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
@@ -138,21 +139,23 @@
     <h1>Sweater</h1>
 </header>
 
-<article data-role="content">
+<article data-role="content" class="project">
 	<h2>Sweater</h2>
-    <img src="sweater-360.jpeg" alt="Sweater" />
+	<figure>
+		<img src="images/examples/SweaterImg.png" alt="Sweater" />
+	</figure>
 	<div class="ui-field-contain">
 	  <label for="gauge">Gauge:</label>
-	  <input type="number" name="gauge" id="gauge" value="">
+	  <input type="number" name="gauge" id="gauge" value="5">
 	  <select name="select-gauge-units" id="select-gauge-units">
-		<option value="standard">Sts/inch</option>
-		<option value="rush">Sts/4inches</option>
-		<option value="express">Sts/10cm</option>
+		<option value="stspinch">Sts/inch</option>
+		<option value="stsp4inch">Sts/4inches</option>
+		<option value="stsp10cm">Sts/10cm</option>
 	  </select>
 	</div>
 	<div class="ui-field-contain">
 	  <label for="size">Chest Size:</label>
-	  <input type="number" name="size" id="size" value="">
+	  <input type="number" name="size" id="size" value="36">
 	  <select name="select-size-units" id="select-size-units">
 		<option value="inches">inches</option>
 		<option value="cm">cm</option>

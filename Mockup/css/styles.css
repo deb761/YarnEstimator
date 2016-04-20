@@ -19,11 +19,11 @@ img {
     width: 3.5em;
 }
 #needed {
-    width: 6em;
+    width: 5em;
 }
 /* Give the Titles a bit more room */
 h1.ui-title {
-    margin: 0 10% !important;
+    margin: 0 10px !important;
     color: #703030;
     font-size: 28px !important;
 }
@@ -31,7 +31,7 @@ header {
     background-color: #7E827A !important;
 }
 
-body {
+body, #weights .ui-listview>li {
     background-color: rgba(212,216,214,0.5);
 }
 

@@ -5,9 +5,9 @@ $(window).load(function(){
     var gaugeE = $("#gauge");
     var gUnits = $("#select-gauge-units");
     var sizeE = $("#size");
-    var neededE = $("#needed");
+    var neededE = $("#needed").attr('readonly', 'readonly');
     var ballSizeE = $("#ball-size");
-    var ballsE = $("#balls-needed");
+    var ballsE = $("#balls-needed").attr('readonly', 'readonly');
     var sizeUnitsE = $("#select-size-units");
     var lengthUnitsE = $("#select-length-units");
     

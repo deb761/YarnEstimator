@@ -10,6 +10,9 @@ public class Sweater extends Project {
     // Units for chest size
     private ShortLengthUnits chestUnits;
 
+    public Sweater(String name, int thumbImageID, Class<?> aClass) {
+        super(name, thumbImageID, aClass);
+    }
     protected class SizeData {
         // Finished size around the chest
         public double chest;
@@ -57,10 +60,10 @@ public class Sweater extends Project {
 
         // Now convert the yarn required into the desired units
         if (getBallSizeUnits() != LongLengthUnits.Meters) {
-            yarnRequired = (int)Math.ceil(meters / yards2meters);
+            yarnNeeded = (int)Math.ceil(meters / yards2meters);
         }
         else {
-            yarnRequired = (int)Math.ceil(meters);
+            yarnNeeded = (int)Math.ceil(meters);
         }
 
         ballsNeeded = (int)Math.ceil(meters / ballSize);

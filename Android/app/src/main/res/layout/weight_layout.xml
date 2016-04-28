@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/weightHeader"
+        android:textColor="@color/caption_color" />
+
+    <TextView
+        style="@style/weightStyle"
+        android:text="Needle sizes:"
+        android:id="@+id/needleSizeLabel"
+        android:layout_below="@+id/weightHeader"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        style="@style/weightStyle"
+        android:text="Gauge:"
+        android:id="@+id/gaugeLabel"
+        android:layout_below="@+id/needleSizeLabel"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        style="@style/weightStyle"
+        android:text="Windings Per Inch (wpi):"
+        android:id="@+id/wpiLabel"
+        android:layout_below="@+id/gaugeLabel" />
+
+    <TextView
+        style="@style/weightStyle"
+        android:text="Size range"
+        android:id="@+id/needleSizeView"
+        android:layout_toRightOf="@id/needleSizeLabel"
+        android:layout_below="@+id/weightHeader" />
+
+    <TextView
+        style="@style/weightStyle"
+        android:text="Medium Text"
+        android:id="@+id/gaugeView"
+        android:layout_toRightOf="@+id/gaugeLabel"
+        android:layout_below="@+id/needleSizeLabel" />
+
+    <TextView
+        style="@style/weightStyle"
+        android:text="15"
+        android:id="@+id/wpiView"
+        android:layout_below="@+id/gaugeView"
+        android:layout_toRightOf="@+id/wpiLabel" />
+</RelativeLayout>

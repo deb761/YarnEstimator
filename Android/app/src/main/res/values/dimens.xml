@@ -4,5 +4,8 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="header_font_size">28sp</dimen>
     <dimen name="button_size">64dp</dimen>
-    <dimen name="button_spacing">60dp</dimen>
+    <dimen name="button_spacing">20dp</dimen>
+    <dimen name="thumb_height">64dp</dimen>
+    <dimen name="thumb_width">64dp</dimen>
+    <dimen name="weight_padding">5dp</dimen>
 </resources>

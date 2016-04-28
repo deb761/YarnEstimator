@@ -4,17 +4,18 @@ package com.deb761.yarnestimator;
  * Created by deb on 4/25/16.
  */
 
-public enum GaugeUnits { StsPerInch, StsPer4inch, StsPer10cm }
-public enum ShortLengthUnits { Inches, CM }
-public enum LongLengthUnits { Yards, Meters }
+enum GaugeUnits { StsPerInch, StsPer4inch, StsPer10cm }
+enum ShortLengthUnits { Inches, CM }
+enum LongLengthUnits { Yards, Meters }
 
 public abstract class Project {
     private String name;
     private double gauge;
     private GaugeUnits gaugeUnits;
     private int thumbImageID;
-    private int imageID;
-    protected int yarnRequired;
+    private  Class<?> aClass;
+    protected int yarnNeeded;
+    private LongLengthUnits yarnNeededUnits;
     private int ballSize;
     private LongLengthUnits ballSizeUnits;
     protected int ballsNeeded;
@@ -44,12 +45,16 @@ public abstract class Project {
         return thumbImageID;
     }
 
-    public int getImageID() {
-        return imageID;
+    public Class<?> getaClass() {
+        return aClass;
     }
 
-    public int getYarnRequired() {
-        return yarnRequired;
+    public void setaClass(Class<?> aClass) {
+        this.aClass = aClass;
+    }
+
+    public int getYarnNeeded() {
+        return yarnNeeded;
     }
 
     public int getBallSize() {
@@ -75,17 +80,27 @@ public abstract class Project {
     protected double inches2cm = 2.54;
     protected double yards2meters = 0.9144;
 
-    public Project(String name, int thumbImageID, int imageID)
+    public Project () {
+        gauge = 20;
+        gaugeUnits = GaugeUnits.StsPer10cm;
+        yarnNeeded = 0;
+        yarnNeededUnits = LongLengthUnits.Meters;
+        ballSize = 150;
+        ballSizeUnits = LongLengthUnits.Meters;
+        ballsNeeded = 0;
+    }
+    public Project(String name, int thumbImageID, Class<?> aClass)
     {
+        this();
         this.name = name;
         this.thumbImageID = thumbImageID;
-        this.imageID = imageID;
+        this.aClass = aClass;
     }
 
     public abstract void calcYarnRequired();
 
     protected void calcBallsNeeded()
     {
-        ballsNeeded = (int) Math.ceil((double) yarnRequired / (double) ballSize);
+        ballsNeeded = (int) Math.ceil((double) yarnNeeded / (double) ballSize);
     }
 }

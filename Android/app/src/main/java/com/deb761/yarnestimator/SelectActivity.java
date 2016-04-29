@@ -11,6 +11,15 @@ import android.widget.GridView;
 import android.widget.ImageButton;
 
 public class SelectActivity extends AppCompatActivity {
+    private static Project project;
+
+    public static Project getProject() {
+        return project;
+    }
+
+    public static void setProject(Project proj) {
+        project = proj;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

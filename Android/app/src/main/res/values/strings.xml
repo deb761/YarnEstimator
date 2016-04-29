@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Yarn Requirements</string>
+    <string-array name="gauge_units_array">
+        <item>sts/inch</item>
+        <item>sts/4inches</item>
+        <item>sts/10cm</item>
+    </string-array>
+    <string-array name="short_length_units_array">
+        <item>inches</item>
+        <item>cm</item>
+    </string-array>
+    <string-array name="long_length_units_array">
+        <item>yards</item>
+        <item>meters</item>
+    </string-array>
 </resources>

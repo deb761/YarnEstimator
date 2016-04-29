@@ -70,6 +70,7 @@ public class SelectGridAdaptor extends BaseAdapter {
             holder.imageView.setOnClickListener(new View.OnClickListener() {
 
                 public void onClick(View v) {
+                    SelectActivity.setProject(project);
                     Intent intent = new Intent(mContext, //<-------------
                             project.getaClass()).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     mContext.startActivity(intent);

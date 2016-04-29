@@ -6,9 +6,25 @@ package com.deb761.yarnestimator;
 public class Sweater extends Project {
 
     // Finished size around the chest
-    private double chestSize;
+    private double chestSize = 40.0;
     // Units for chest size
-    private ShortLengthUnits chestUnits;
+    private ShortLengthUnits chestUnits = ShortLengthUnits.Inches;
+
+    public double getChestSize() {
+        return chestSize;
+    }
+
+    public void setChestSize(double chestSize) {
+        this.chestSize = chestSize;
+    }
+
+    public ShortLengthUnits getChestUnits() {
+        return chestUnits;
+    }
+
+    public void setChestUnits(ShortLengthUnits chestUnits) {
+        this.chestUnits = chestUnits;
+    }
 
     public Sweater(String name, int thumbImageID, Class<?> aClass) {
         super(name, thumbImageID, aClass);

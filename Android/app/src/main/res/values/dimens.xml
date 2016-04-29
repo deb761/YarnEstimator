@@ -8,4 +8,5 @@
     <dimen name="thumb_height">64dp</dimen>
     <dimen name="thumb_width">64dp</dimen>
     <dimen name="weight_padding">5dp</dimen>
+    <dimen name="param_text_size">18sp</dimen>
 </resources>

@@ -4,9 +4,33 @@ package com.deb761.yarnestimator;
  * Created by deb on 4/25/16.
  */
 
-enum GaugeUnits { StsPerInch, StsPer4inch, StsPer10cm }
-enum ShortLengthUnits { Inches, CM }
-enum LongLengthUnits { Yards, Meters }
+enum GaugeUnits { StsPerInch, StsPer4inch, StsPer10cm;
+    private static GaugeUnits[] values = null;
+    public static GaugeUnits fromInt(int i) {
+        if (GaugeUnits.values == null) {
+            GaugeUnits.values = GaugeUnits.values();
+        }
+        return GaugeUnits.values[i];
+    }
+}
+enum ShortLengthUnits { Inches, CM;
+    private static ShortLengthUnits[] values = null;
+    public static ShortLengthUnits fromInt(int i) {
+        if (ShortLengthUnits.values == null) {
+            ShortLengthUnits.values = ShortLengthUnits.values();
+        }
+        return ShortLengthUnits.values[i];
+    }
+}
+enum LongLengthUnits { Yards, Meters;
+    private static LongLengthUnits[] values = null;
+    public static LongLengthUnits fromInt(int i) {
+        if (LongLengthUnits.values == null) {
+            LongLengthUnits.values = LongLengthUnits.values();
+        }
+        return LongLengthUnits.values[i];
+    }
+}
 
 public abstract class Project {
     private String name;
@@ -55,6 +79,14 @@ public abstract class Project {
 
     public int getYarnNeeded() {
         return yarnNeeded;
+    }
+
+    public LongLengthUnits getYarnNeededUnits() {
+        return yarnNeededUnits;
+    }
+
+    public void setYarnNeededUnits(LongLengthUnits yarnNeededUnits) {
+        this.yarnNeededUnits = yarnNeededUnits;
     }
 
     public int getBallSize() {

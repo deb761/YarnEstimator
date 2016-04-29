@@ -10,4 +10,6 @@
     <color name="caption_color">#020459</color>
     <color name="entry_background">#e0e0f2</color>
     <color name="text_color">#2f343b</color>
+    <color name="foreground_material_light_1">#743030</color>
+    <color name="black">#943434</color>
 </resources>

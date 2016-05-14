@@ -75,7 +75,7 @@ public class Sweater extends Project {
         double meters = sRatio * (bigMeters - smallMeters) + smallMeters;
 
         // Now convert the yarn required into the desired units
-        if (getBallSizeUnits() != LongLengthUnits.Meters) {
+        if (getYarnNeededUnits() != LongLengthUnits.Meters) {
             yarnNeeded = (int)Math.ceil(meters / yards2meters);
         }
         else {

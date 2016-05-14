@@ -131,8 +131,59 @@ public abstract class Project {
 
     public abstract void calcYarnRequired();
 
+    // Calculations borrowed from http://www.thedietdiary.com/knittingfiend/tools/EstimatingYardageRectangles.html
+    // copyright Lucia Liljegren 2005.
+    public void calcYarnRequired(double siLength, double siWidth) {
+        double siGauge = getGauge();
+
+        // First, put values into SI units
+        if (getGaugeUnits() == GaugeUnits.StsPerInch) {
+            siGauge *= 4;
+        }
+
+        int siBallSize = getBallSize();
+        if (getBallSizeUnits() == LongLengthUnits.Yards) {
+            siBallSize *= yards2meters;
+        }
+        int stitches = (int) Math.ceil(gauge * siWidth / 10);
+        double rowGauge = gauge * 1.2;
+        int rows = (int) Math.ceil(rowGauge * siLength / 10);
+
+        int totalStitches = stitches * (rows + 2); // 2 for cast on and bind off.
+
+        double cmPerStitch = 10.0 / gauge;
+        double cmPerRow = 10.0 / rowGauge;
+
+        double normalizedCm = Math.sqrt(cmPerStitch * cmPerStitch + cmPerRow * cmPerRow);
+
+        double meterFactor = Math.PI * 1.02 * 1.02;
+        double meters = meterFactor * normalizedCm * totalStitches / 100;
+        // Add 10% for safety
+        meters *= 1.1;
+
+        // Now convert the yarn required into the desired units
+        if (getYarnNeededUnits() != LongLengthUnits.Meters) {
+            yarnNeeded = (int)Math.ceil(meters / yards2meters);
+        }
+        else {
+            yarnNeeded = (int)Math.ceil(meters);
+        }
+
+        ballsNeeded = (int)Math.ceil(meters / siBallSize);
+
+    }
+    // Calculate the number of balls needed, taking into account the selected units
     protected void calcBallsNeeded()
     {
-        ballsNeeded = (int) Math.ceil((double) yarnNeeded / (double) ballSize);
+        if (yarnNeededUnits == ballSizeUnits) {
+            ballsNeeded = (int) Math.ceil((double) yarnNeeded / (double) ballSize);
+        }
+        else {
+            double yarn = (yarnNeededUnits == LongLengthUnits.Meters) ? yarnNeeded :
+                    yarnNeeded * yards2meters;
+            double ballMeters = (ballSizeUnits == LongLengthUnits.Meters) ? ballSize :
+                    ballSize * yards2meters;
+            ballsNeeded = (int) Math.ceil(yarn / ballMeters);
+        }
     }
 }

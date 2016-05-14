@@ -39,11 +39,11 @@ public class SelectActivity extends AppCompatActivity {
             new Gloves("Gloves", R.drawable.gloves_thumb, MittensActivity.class),
             new Socks("Socks", R.drawable.socks_thumb, MittensActivity.class),
             new Tam("Tam", R.drawable.tam_thumb, MittensActivity.class),
-            new Scarf("Scarf", R.drawable.scarf_thumb, MittensActivity.class),
+            new Scarf("Scarf", R.drawable.scarf_thumb, BlanketActivity.class),
             new Toque("Toque", R.drawable.toque_thumb, MittensActivity.class),
             new Sweater("Sweater", R.drawable.sweater_thumb, SweaterActivity.class),
             new Vest("Vest", R.drawable.vest_thumb, SweaterActivity.class),
-            new Blanket("Blanket", R.drawable.scarf_thumb, MittensActivity.class)
+            new Blanket("Blanket", R.drawable.scarf_thumb, BlanketActivity.class)
     };
 
     private void initWeightButton() {

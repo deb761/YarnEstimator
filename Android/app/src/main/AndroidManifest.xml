@@ -18,7 +18,8 @@
         <activity android:name=".SweaterActivity" />
         <activity android:name=".MittensActivity" />
         <activity android:name=".WeightsActivity" />
-        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".BlanketActivity"></activity>
     </application>
 
 </manifest>
